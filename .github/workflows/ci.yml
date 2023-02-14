@@ -17,5 +17,6 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install mkdocs-material 
+      - run: pip install pip setuptools wheel mkdocs-material pandas setuptools mkdocs-awesome-pages-plugin git+https://github.com/frankkopp/mkdocs-redirects.git mkdocs-git-revision-date-localized-plugin mkdocs-encryptcontent-plugin mkdocs-exclude markdown-captions markdown-customblocks git+https://github.com/vuquangtrong/cell_row_span.git
+
       - run: mkdocs gh-deploy --force
