@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "vivekfe.github.io"
+version = "0.1.0"
+description = ""
+authors = ["Vivek Srivastava <435616+vivekfe@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.5.3"
+mkdocs-material = "^9.0.12"
+pip = "^23.0"
+setuptools = "^67.2.0"
+mkdocs-awesome-pages-plugin = "^2.8.0"
+mkdocs-redirects = {git = "https://github.com/frankkopp/mkdocs-redirects.git"}
+mkdocs-git-revision-date-localized-plugin = "^1.1.0"
+mkdocs-encryptcontent-plugin = "^2.4.5"
+mkdocs-exclude = "^1.0.2"
+markdown-captions = "^2.1.2"
+markdown-customblocks = "^1.4.1"
+cell-row-span = {git = "https://github.com/vuquangtrong/cell_row_span.git"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

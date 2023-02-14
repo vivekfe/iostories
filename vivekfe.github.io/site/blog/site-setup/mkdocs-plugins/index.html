@@ -1,0 +1,1934 @@
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Plugins are used to add new features into the MkDocs engine. Those plugins can change the way you manage and write your documents, or even can change the rendered content. This post showes the pluguns used in this site for reference.">
+      
+      
+        <meta name="author" content="Vũ Quang Trọng (vuquangtrong@gmail.com)">
+      
+      
+        <link rel="canonical" href="https://www.codeinsideout.com/blog/site-setup/mkdocs-plugins/">
+      
+      
+        <link rel="prev" href="../create-site-project/">
+      
+      
+        <link rel="next" href="../markdown-syntax/">
+      
+      <link rel="icon" href="../../../favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
+    
+    
+    <title>Additional Features using MkDocs Plugins - Code Inside Out</title>
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-144Q0VJMBT"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-144Q0VJMBT",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-144Q0VJMBT",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Additional Features using MkDocs Plugins - Code Inside Out" />
+    <meta property="og:description" content="Plugins are used to add new features into the MkDocs engine. Those plugins can change the way you manage and write your documents, or even can change the rendered content. This post showes the pluguns used in this site for reference. - Guides, notes and useful stuff for learning embedded systems." />
+    <meta property="og:url" content="https://www.codeinsideout.com/blog/site-setup/mkdocs-plugins/" />
+    <meta property="og:image" content="https://www.codeinsideout.com/blog/site-setup/mkdocs-plugins/plugin.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Additional Features using MkDocs Plugins - Code Inside Out" />
+    <meta name="twitter:description" content="Plugins are used to add new features into the MkDocs engine. Those plugins can change the way you manage and write your documents, or even can change the rendered content. This post showes the pluguns used in this site for reference. - Guides, notes and useful stuff for learning embedded systems." />
+    <meta name="twitter:image" content="https://www.codeinsideout.com/blog/site-setup/mkdocs-plugins/plugin.png" />
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#awesome-pages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="">
+    <a href="../../.." title="Code Inside Out" class="md-header__button md-logo" aria-label="Code Inside Out" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Code Inside Out
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Additional Features using MkDocs Plugins
+            
+          </span>
+        </div>
+        
+            <style>
+                .md-header__nav {
+                    float: right;
+                }
+                .md-header__nav__inner:not([hidden]) {
+                    display: flex;
+                }
+            </style>
+            <div class="md-header__nav">
+                
+                <nav class="md-header__nav__inner">
+                    
+                        
+                        <a href="../create-site-project/" aria-label="Previous: A Guide to Create a Personal Site" rel="prev">
+                            <div class="md-footer__button md-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                            </div>
+                        </a>
+                    
+                    
+                        
+                        <a href="../markdown-syntax/" aria-label="Next: Syntaxes for Writing Markdown Documents" rel="next">
+                            <div class="md-footer__button md-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+                            </div>
+                        </a>
+                    
+                </nav>
+            </div>
+        
+    </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        Tags
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+    
+    
+
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Code Inside Out" class="md-nav__button md-logo" aria-label="Code Inside Out" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    Code Inside Out
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Blog</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Recent posts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Site setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Site setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Site setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../create-site-project/">Create site project</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Create site project" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Create site project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-site-project/" class="md-nav__link">
+        A Guide to Create a Personal Site
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Mkdocs plugins</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Mkdocs plugins" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Mkdocs plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" checked
+        onchange='(function(){
+          var _pid = "__nav_2_2_2_1".slice(0, -2);
+          var _pel = document.getElementById(_pid);
+          _pel.checked  = false;
+        })()'
+      >
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Additional Features using MkDocs Plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Additional Features using MkDocs Plugins
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#awesome-pages" class="md-nav__link">
+    Awesome Pages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-index" class="md-nav__link">
+    Section index
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-date" class="md-nav__link">
+    Revision date
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-to-pdf" class="md-nav__link">
+    Print to PDF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macros" class="md-nav__link">
+    Macros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawio-exporter" class="md-nav__link">
+    DrawIO Exporter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mermaid" class="md-nav__link">
+    Mermaid
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../markdown-syntax/">Markdown syntax</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Markdown syntax" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Markdown syntax
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown-syntax/" class="md-nav__link">
+        Syntaxes for Writing Markdown Documents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" type="checkbox" id="__nav_2_2_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../handle-missing-page/">Handle missing page</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Handle missing page" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Handle missing page
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handle-missing-page/" class="md-nav__link">
+        Hanlde Page Not Found (404) error
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5" type="checkbox" id="__nav_2_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../add-new-features/">Add new features</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Add new features" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Add new features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-new-features/" class="md-nav__link">
+        Add Tags, Recent Post and new Features to my Blog site
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" type="checkbox" id="__nav_2_2_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../print-to-pdf/">Print to PDF</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Print to PDF" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Print to PDF
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print-to-pdf/" class="md-nav__link">
+        Print Pages to PDF files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../protected-page/">Protected page</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Protected page" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Protected page
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protected-page/" class="md-nav__link">
+        [Protected] A Password-proteted private page!
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tags/">Tags</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Tags" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tags
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+
+                
+                
+                    <br>
+                    <br>
+                    <div class="tag-cloud-nav">
+                        
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+    
+      
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+
+
+<style>
+    .tag-cloud {
+        margin-top:0;
+        margin-bottom: 0.5em;
+    }
+    .tag-cloud-content {
+        padding: 0 0.6rem;
+        
+    }
+</style>
+
+<p class="md-nav tag-cloud">
+  <label class="md-nav__title">Tag cloud</label>
+</p>
+<div class="tag-cloud-content">
+    
+        
+            
+            
+            
+            <a class="tag" href="https://www.codeinsideout.com/tags/#jinja">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.55rem;
+                    
+                    color:DarkGoldenrod;
+                ">jinja&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://www.codeinsideout.com/tags/#javascript">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.6rem;
+                    
+                    color:DarkGreen;
+                ">javascript&nbsp;
+                </span>
+                <!--<sup class="tag-count">2</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://www.codeinsideout.com/tags/#mkdocs">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.6rem;
+                    
+                    color:DarkOliveGreen;
+                ">mkdocs&nbsp;
+                </span>
+                <!--<sup class="tag-count">2</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://www.codeinsideout.com/tags/#markdown">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.55rem;
+                    
+                    color:DarkCyan;
+                ">markdown&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://www.codeinsideout.com/tags/#python">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.55rem;
+                    
+                    color:DarkTurquoise;
+                ">python&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://www.codeinsideout.com/tags/#encryption">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.55rem;
+                    
+                    color:DarkBlue;
+                ">encryption&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+    
+</div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#awesome-pages" class="md-nav__link">
+    Awesome Pages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-index" class="md-nav__link">
+    Section index
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-date" class="md-nav__link">
+    Revision date
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-to-pdf" class="md-nav__link">
+    Print to PDF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macros" class="md-nav__link">
+    Macros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawio-exporter" class="md-nav__link">
+    DrawIO Exporter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mermaid" class="md-nav__link">
+    Mermaid
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+    
+
+
+
+<style>
+    .md-typeset .cover {
+        margin-bottom: 1em;
+    }
+    .md-typeset .page-category {
+        color: gray;
+        font-size: large;
+    }
+    .md-typeset .page-title {
+        margin-left: -0.0625em;
+    }
+    .md-typeset .page-extra {
+        color: gray;
+        font-size: small;
+    }
+    .md-typeset .page-tags {
+        margin: 0;
+    }
+    .md-typeset .page-date {
+        margin: 0;
+        text-align: end;
+    }
+    @media print {
+        .md-typeset .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .md-typeset .cover + * {
+            margin-top: 0;
+        }
+    }
+</style>
+
+<div class="cover">
+    
+    
+
+    
+    <h1 class="page-title"> Additional Features using MkDocs Plugins </h1>
+
+    
+    
+        <p class="page-description">
+            Plugins are used to add new features into the MkDocs engine. Those plugins can change the way you manage and write your documents, or even can change the rendered content. This post showes the pluguns used in this site for reference.
+        </p>
+    
+
+    
+        <div class="page-extra row">
+            <div class="col">
+            
+                <p class="page-tags">
+                    
+                        <a class="tag" href="https://www.codeinsideout.com/tags/#mkdocs">
+                            <span class="tag-name">
+                                #mkdocs &nbsp;
+                            </span>
+                        </a>
+                    
+                </p>
+            
+            
+            </div>
+            <div class="col">
+                <p class="page-date">
+                    <span>
+                    
+                        Last update:
+                        2023-02-14
+                    
+                    </span>
+                </p>
+            </div>
+        </div>
+    
+</div>
+
+<hr class="screen-only">
+
+
+<style>
+    .md-typeset .toc {
+        display: none;
+    }
+    .md-typeset .toc label {
+        display: none;
+    }
+    .md-typeset .toc .md-nav {
+        font-size: unset;
+        line-height: 1.6;
+    }
+    .md-typeset .toc .md-nav--secondary {
+        margin-left: -2em;
+    }
+    .md-typeset .toc .md-nav__list {
+        margin: 0;
+    }
+    .md-typeset .toc ul {
+        list-style: none;
+    }
+    @media print {
+        .md-typeset .toc {
+            display: block;
+            page-break-after: always;
+        }
+        .md-typeset .toc .md-nav__link {
+            color: var(--md-typeset-a-color);
+        }
+        .md-typeset .toc .md-nav__link.md-nav__link--active {
+            font-weight: unset;
+        }
+        .md-typeset .toc + * {
+            margin-top: 0;
+        }
+    }
+</style>
+
+<div class="toc">
+    <h2>Table of Content</h2>
+    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#awesome-pages" class="md-nav__link">
+    Awesome Pages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-index" class="md-nav__link">
+    Section index
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-date" class="md-nav__link">
+    Revision date
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-to-pdf" class="md-nav__link">
+    Print to PDF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macros" class="md-nav__link">
+    Macros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawio-exporter" class="md-nav__link">
+    DrawIO Exporter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mermaid" class="md-nav__link">
+    Mermaid
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+</div>
+
+
+
+    
+    <p>Places to get MkDocs Plugins: <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins">Official List</a>, <a href="https://www.wheelodex.org/entry-points/mkdocs.plugins/">Wheelodex</a>, and <a href="https://github.com/search?l=Python&amp;o=desc&amp;q=%22from+mkdocs.plugins+import%22&amp;s=indexed&amp;type=Code">GitHub</a>.</p>
+<h2 id="awesome-pages">Awesome Pages<a class="headerlink" href="#awesome-pages" title="Permanent link">#</a></h2>
+<p><a href="https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin">MkDocs Awesome Pages plugin</a> simplifies configuring page titles and their entries order.</p>
+<p>Install the plugin:</p>
+<div class="highlight"><pre><span></span><code>pip install -U mkdocs-awesome-pages-plugin
+</code></pre></div>
+<p>Enable it in the config file <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"> </span><span class="c1"># built-in search must be always activated</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">awesome-pages</span>
+</code></pre></div>
+<p>Create a YAML file named <code>.pages</code> in a directory and use a local <code>nav</code> attribute to customize the navigation in each folder with some more extra configurations:</p>
+<ol>
+<li>
+<p>A 3-dots <code>...</code> entry is used to specify where all remaining items should be inserted. It can filter the remaining items using glob patterns or regular expressions. For example:</p>
+<div class="admonition attention">
+<p class="admonition-title"> </p>
+<p>The pattern is checked against the <em>basename</em> of remaining items - not their whole path, so it can be used to filter files in sub-folders.</p>
+</div>
+</li>
+<li>
+<p>Hide directory by setting the <code>hide</code> attribute to <code>true</code>.</p>
+</li>
+<li>
+<p>Optionally set the directory title using the <code>title</code> attribute.
+    Optionally specify a title for the navigation entry before its document path. For example:</p>
+</li>
+<li>
+<p>Collapse single nested pages by setting <code>collapse_single_pages</code> attribute to <code>true</code>.</p>
+</li>
+</ol>
+<p><em>Example:</em></p>
+<div class="highlight"><span class="filename">.pages</span><pre><span></span><code><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">New section</span>
+<span class="nt">nav</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">... | introduction-*.md</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">summary.md</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">First page</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">page1.md</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Link Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com</span>
+<span class="nt">hide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">collapse_single_pages</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<p>
+<figure><img src="nav_collapse_single_pages.png" /><figcaption>Using Awesome Pages plugin with <code>collapse_single_pages</code> enabled,<br> before and after applying</figcaption>
+</figure>
+</p>
+<h2 id="section-index">Section index<a class="headerlink" href="#section-index" title="Permanent link">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title"> </p>
+<p>This plugin is no longer used in this site! The feature <code>navigation.indexes</code> comes with Material theme already does the work of this plugin.</p>
+</div>
+<p>In MkDocs, each directory will become a section, and by default, section only contains its children pages. There is no page associated to a section. <a href="https://pypi.org/project/mkdocs-section-index/">MkDocs Section Index</a> is a plugin that attaches the first child page, usually an index page, to the section link.</p>
+<p>Install the plugin:</p>
+<div class="highlight"><pre><span></span><code>pip install -U mkdocs-section-index
+</code></pre></div>
+<p>Enable it in the config file <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"> </span><span class="c1"># built-in search must be always activated</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">awesome-pages</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">section-index</span><span class="w"> </span><span class="c1"># must be after awesome-pages # (1)</span>
+</code></pre></div>
+<ol>
+<li>Note that the feature <code>navigation.indexes</code> comes with Material theme already to the work of this plugin.</li>
+</ol>
+<p>The merged section page shows the section’s title from the <em>directory name</em>, not the attached page’s title.</p>
+<p>
+<figure><img src="nav_section_index.png" /><figcaption>Using the Section Index plugin, before and after applying</figcaption>
+</figure>
+</p>
+<h2 id="revision-date">Revision date<a class="headerlink" href="#revision-date" title="Permanent link">#</a></h2>
+<p>To keep tracking the last modified date of a post, <a href="https://github.com/zhaoterryy/mkdocs-git-revision-date-plugin">git-revision-date</a> plugin can be used. A better alternative plugin is <a href="https://pypi.org/project/mkdocs-git-revision-date-localized-plugin/">git-revision-date-localized</a> which provides more types of date format (e.g. in time-ago format), and the creation date.</p>
+<p>Install the plugin:</p>
+<div class="highlight"><pre><span></span><code>pip install -U mkdocs-git-revision-date-localized-plugin
+</code></pre></div>
+<p>Enable it in the config file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"> </span><span class="c1"># built-in search must be always activated</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">git-revision-date-localized</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">enable_creation_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iso_date</span>
+</code></pre></div>
+<p>This plugin creates new field in the post&rsquo;s meta-data which content the creation and update date. This information is used to sort the posts by revision date to get recently updated items, as shown in the <a href="../add-new-features/#the-recent-blog-posts">Recent blog posts</a> page.</p>
+<h2 id="print-to-pdf">Print to PDF<a class="headerlink" href="#print-to-pdf" title="Permanent link">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title"> </p>
+<p>Enabling this plugin causes very long build time when you have lot of posts!</p>
+</div>
+<p>To export the posts on this blog, there are some plugins which can do it. However, most of them depend on <a href="http://weasyprint.org/">Weasy Print</a> which in turn depends on many other packages. There is one plugin that prints in an easy and simple way: use browser to print page by sending print command (like press <code>Ctrl + S</code>).</p>
+<p>More detail of installation and configuration the <a href="https://github.com/vuquangtrong/mkdocs-pdf-with-js-plugin">MkDocs PDF with JS</a> plugin for printing to PDF can be read in <a href="../print-to-pdf/">Print to PDF</a>.</p>
+<h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title"> </p>
+<p>This plugin is no longer used in this site!</p>
+</div>
+<p><a href="https://mkdocs-macros-plugin.readthedocs.io/en/latest/">MkDocs Macros</a> is a plugin/ framework that makes it easy to produce richer and more beautiful pages. It can do two things:</p>
+<ol>
+<li>
+<p>Transform the markdown pages into a <a href="https://jinja.palletsprojects.com">Jinja2 templates</a> that can use variables, macros and filters.</p>
+</li>
+<li>
+<p>Replace MkDocs plugins for a wide range of tasks: e.g. manipulating the navigation, adding files after the HTML pages have already been generated etc.</p>
+</li>
+</ol>
+<p>Install the plugin:</p>
+<div class="highlight"><pre><span></span><code>pip install -U mkdocs-macros-plugin
+</code></pre></div>
+<p>Enable it in the config file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"> </span><span class="c1"># built-in search must be always activated</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">macros</span>
+</code></pre></div>
+<div class="admonition bug">
+<p class="admonition-title">Incomplete data in macro</p>
+<p>The macro <code class="highlight"><span class="cp">{{</span><span class="nv">navigation.pages</span><span class="cp">}}</span></code> contains a list of all pages, but the data of each page maybe not complete, such as <em>title</em> or <em>meta-data</em>.</p>
+<p>This issue happens when rendering a the content of the first page, but it needs to know the content of the second page which has not been parsed already as it is waiting for the first page getting done.</p>
+</div>
+<h2 id="drawio-exporter">DrawIO Exporter<a class="headerlink" href="#drawio-exporter" title="Permanent link">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title"> </p>
+<p>This plugin is no longer used in this site!</p>
+</div>
+<p><a href="https://github.com/LukeCarrier/mkdocs-drawio-exporter">DrawIO Exporter</a> is a great plugin that exports the <code>.drawio</code> diagrams to images at build time and insert them to the document. This plugin can replace the <a href="https://github.com/fralau/mkdocs-mermaid2-plugin">Mermaid</a> plugin, and it is faster thanks to no JavaScript needed at runtime. It also helps to enable instant navigation mode of the Material theme.</p>
+<p>Install the plugin:</p>
+<div class="highlight"><pre><span></span><code>pip install -U mkdocs-drawio-exporter
+</code></pre></div>
+<p>Enable it in the config file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"> </span><span class="c1"># built-in search must be always activated</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">drawio-exporter</span>
+</code></pre></div>
+<p>To create end edit <code>.drawio</code> diagram, download and install the <a href="https://www.diagrams.net">diagrams.net</a> application.</p>
+<p>To import a diagram, just use the syntax for inserting an image:</p>
+<div class="highlight"><pre><span></span><code>![<span class="nt">My alt text</span>](<span class="na">my-diagram.drawio</span>)
+</code></pre></div>
+<p>The plugin will generate an SVG image to a cache folder (default in <code>docs\drawio-exporter</code>), and then modify the image&rsquo;s source to point to the generated image.</p>
+<p>If the diagram is a multipage document, append the index of the page as an anchor in the image&rsquo;s URL to select the target page:</p>
+<div class="highlight"><pre><span></span><code>![<span class="nt">Page 1</span>](<span class="na">my-diagram.drawio#0</span>)
+</code></pre></div>
+<p>
+<figure><img src="example.drawio.svg" /><figcaption>A draw.io diagram</figcaption>
+</figure>
+</p>
+<div class="admonition info">
+<p class="admonition-title">Alternative method</p>
+<p>Using <a href="../create-site-project/#visual-studio-code">Draw.io Integration</a> extension in Visual Studio Code, I can save a DrawIO diagram as a <code>.drawio.svg</code> file, then use that file directly in the page as an usual image. However this method will not support multiple pages in the drawing:</p>
+<div class="highlight"><pre><span></span><code>![<span class="nt">My alt text</span>](<span class="na">my-diagram.drawio.svg</span>)   // work
+![<span class="nt">My alt text</span>](<span class="na">my-diagram.drawio.svg#1</span>) // does not work
+</code></pre></div>
+</div>
+<h2 id="mermaid">Mermaid<a class="headerlink" href="#mermaid" title="Permanent link">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title"> </p>
+<p>This plugin is no longer used in this site!</p>
+</div>
+<p><a href="https://github.com/fralau/mkdocs-mermaid2-plugin">MkDocs Mermaid2</a> is a plugin to render textual graph description into <a href="https://mermaid-js.github.io/mermaid">Mermaid</a> graphs (flow charts, sequence diagrams, pie charts, etc.).</p>
+<p>Install the plugin:</p>
+<div class="highlight"><pre><span></span><code>pip install -U mkdocs-mermaid2-plugin
+</code></pre></div>
+<p>Enable it in the config file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"> </span><span class="c1"># built-in search must be always activated</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid2</span>
+</code></pre></div>
+<p>And configure the code block parser for mermaid2 blocks:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.superfences</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">custom_fences</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span>
+<span class="w">                </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span>
+<span class="w">                </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:mermaid2.fence_mermaid</span>
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>``` mermaid
+graph LR
+  A[Start] --&gt; B{Error?};
+  B --&gt;|Yes| C[Hmm...];
+  C --&gt; D[Debug];
+  D --&gt; B;
+  B ----&gt;|No| E[Yay!];
+```
+</code></pre></div>
+<p>will render as:</p>
+<p>
+<figure><img src="example.mermaid.svg" /><figcaption>A diagram generated by Mermaid</figcaption>
+</figure>
+</p>
+
+
+
+    
+    <!-- Get setting from mkdocs.yml, but allow page-level overrides -->
+
+
+
+<!-- Inject Disqus into current page -->
+
+    <h2 id="__comments">Comments</h2>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "https://www.codeinsideout.com/blog/site-setup/mkdocs-plugins/"
+            this.page.identifier =
+                "blog/site-setup/mkdocs-plugins/"
+        }
+
+        /* Set up for the first time */
+        if (typeof DISQUS === "undefined") {
+            var script = document.createElement("script")
+            script.async = true
+            script.src = "https://vuquangtrong-github-io.disqus.com/embed.js"
+            script.setAttribute("data-timestamp", Date.now())
+
+            /* Inject script tag */
+            document.body.appendChild(script)
+
+        /* Set up on navigation (instant loading) */
+        } else {
+            DISQUS.reset({
+                reload: true,
+                config: disqus_config
+            })
+        }
+    </script>
+
+
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2020-2022 Code Inside Out<br> <a href="https://github.com/vuquangtrong/mkdocs-material-blog">Blog Theme</a> / <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/vuquangtrong" target="_blank" rel="noopener" title="vuquangtrong" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://facebook.com/trongvq" target="_blank" rel="noopener" title="trongvq" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/vqtrong" target="_blank" rel="noopener" title="vqtrong" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
+      
+        <script src="../../../assets/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../assets/view-bigimg.js"></script>
+      
+        <script src="../../../assets/extra.js"></script>
+      
+    
+  </body>
+</html>
