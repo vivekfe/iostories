@@ -1,6 +1,6 @@
 ---
 title: Add Tags, Recent Post and new Features to my Blog site
-description: Some must-have features in a blog are Tags and List of recent posts. Agree or disgaree? Tags help to list related posts, and Post List shows recently updated activities. This post decribes a method to add these features based on parsed data.
+description: Some must-have features in a blog are Tags and List of recent posts. Agree or disgaree, comeone say it ? Tags help to list related posts, and Post List shows recently updated activities. This post decribes a method to add these features based on parsed data.
 date: 2021-05-04
 banner: tag_cloud.jpg
 tags:
