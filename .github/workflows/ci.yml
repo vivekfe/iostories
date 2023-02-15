@@ -32,4 +32,16 @@ jobs:
           pip install -U markdown-customblocks
           pip install -U git+https://github.com/vuquangtrong/cell_row_span.git
 
-      - run: mkdocs gh-deploy --force
+      - run: |
+        mkdocs build
+        mkdocs gh-deploy --force
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        with:
+          source-directory: 'site'
+          destination-github-username: 'vivekfe'
+          destination-repository-name: 'vivekfe.github.io'
+          user-email: carles3@pina.cat
+          target-branch: main
