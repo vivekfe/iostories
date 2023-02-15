@@ -7,7 +7,7 @@ permissions:
   contents: write
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -17,6 +17,19 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install pip setuptools wheel mkdocs-material pandas setuptools mkdocs-awesome-pages-plugin git+https://github.com/frankkopp/mkdocs-redirects.git mkdocs-git-revision-date-localized-plugin mkdocs-encryptcontent-plugin mkdocs-exclude markdown-captions markdown-customblocks git+https://github.com/vuquangtrong/cell_row_span.git
+      - run: |
+          pip install pip
+          pip install setuptools
+          pip install wheel 
+          pip install -U mkdocs-material 
+          pip install pandas 
+          pip install -U mkdocs-awesome-pages-plugin
+          pip install -U git+https://github.com/frankkopp/mkdocs-redirects.git 
+          pip install -U mkdocs-git-revision-date-localized-plugin
+          pip install -U mkdocs-encryptcontent-plugin 
+          pip install -U mkdocs-exclude 
+          pip install -U markdown-captions
+          pip install -U markdown-customblocks
+          pip install -U git+https://github.com/vuquangtrong/cell_row_span.git
 
       - run: mkdocs gh-deploy --force
